@@ -10,7 +10,7 @@ import static utilz.Constants.UI.Buttons.*;
 
 public class MenuButton {
 	private int xPos, yPos, rowIndex, index;
-	private int xOffsetCenter = B_WIDTH / 2;
+	private int xOffsetCenter = B_WIDTH -320;
 	private Gamestate state;
 	private BufferedImage[] imgs;
 	private boolean mouseOver, mousePressed;
@@ -27,7 +27,6 @@ public class MenuButton {
 
 	private void initBounds() {
 		bounds = new Rectangle(xPos - xOffsetCenter, yPos, B_WIDTH, B_HEIGHT);
-
 	}
 
 	private void loadImgs() {
@@ -76,6 +75,9 @@ public class MenuButton {
 	public void resetBools() {
 		mouseOver = false;
 		mousePressed = false;
+	}
+	public Gamestate getState() {
+		return state;
 	}
 
 }

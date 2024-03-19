@@ -1,6 +1,7 @@
 package ui;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
@@ -17,7 +18,7 @@ public class LevelCompletedOverlay {
 	private UrmButton menu, next;
 	private BufferedImage img;
 	private int bgX, bgY, bgW, bgH;
-
+	private int tempScore;
 	public LevelCompletedOverlay(Playing playing) {
 		this.playing = playing;
 		initImg();
@@ -41,15 +42,20 @@ public class LevelCompletedOverlay {
 	}
 
 	public void draw(Graphics g) {
-		// Added after youtube upload
 		g.setColor(new Color(0, 0, 0, 200));
 		g.fillRect(0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT);
-
+		drawScore(g);
 		g.drawImage(img, bgX, bgY, bgW, bgH, null);
 		next.draw(g);
 		menu.draw(g);
 	}
-
+	private void drawScore(Graphics g)
+	{
+		tempScore = playing.getScoreValue();
+		g.setColor(Color.white);
+		g.setFont(new Font("Copperplate Gothic Bold",Font.BOLD,32));
+		g.drawString("Your Score: " +tempScore, 510, 100);
+	}
 	public void update() {
 		next.update();
 		menu.update();
@@ -73,11 +79,13 @@ public class LevelCompletedOverlay {
 		if (isIn(menu, e)) {
 			if (menu.isMousePressed()) {
 				playing.resetAll();
-				Gamestate.state = Gamestate.MENU;
+				playing.setGamestate(Gamestate.MENU);
 			}
 		} else if (isIn(next, e))
-			if (next.isMousePressed())
+			if (next.isMousePressed()) {
 				playing.loadNextLevel();
+				playing.getGame().getAudioPlayer().setLevelSong(playing.getLevelManager().getLevelIndex());
+			}
 
 		menu.resetBools();
 		next.resetBools();

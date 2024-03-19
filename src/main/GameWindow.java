@@ -3,6 +3,7 @@ package main;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class GameWindow {
@@ -14,7 +15,9 @@ public class GameWindow {
 
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jframe.add(gamePanel);
-		
+		jframe.setTitle("Far From Home");
+		ImageIcon icon = new ImageIcon("res/icon.png");
+		jframe.setIconImage(icon.getImage());
 		jframe.setResizable(false);
 		jframe.pack();
 		jframe.setLocationRelativeTo(null);

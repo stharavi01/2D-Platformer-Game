@@ -10,6 +10,7 @@ import static main.Game.GAME_WIDTH;
 
 public class GamePanel extends JPanel {
 
+	private static final long serialVersionUID = 1L;
 	private MouseInputs mouseInputs;
 	private Game game;
 
