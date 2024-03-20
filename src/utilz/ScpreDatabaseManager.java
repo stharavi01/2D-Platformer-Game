@@ -12,7 +12,7 @@ public class ScpreDatabaseManager {
 			} catch (ClassNotFoundException e) {
 								e.printStackTrace();
 			}
-        	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/game", "root", "");
+        	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/game", "root", "ynvTYg50");
         	 String sql = "INSERT INTO score (Score) VALUES (?)";
         	PreparedStatement ps = conn.prepareStatement(sql);
           
@@ -29,7 +29,7 @@ public class ScpreDatabaseManager {
 			} catch (ClassNotFoundException e) {
 								e.printStackTrace();
 			}
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/game", "root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/game", "root", "ynvTYg50");
             Statement stmt = conn.createStatement();
             String query = "SELECT MAX(Score) AS max_score FROM score";
             ResultSet rs = stmt.executeQuery(query);

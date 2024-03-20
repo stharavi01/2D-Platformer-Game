@@ -105,6 +105,8 @@ public class HelpMethods {
 		return true;
 	}
 
+	// Proximity Detection to trigger FSM
+	
 	public static boolean CanCannonSeePlayer(int[][] lvlData, Rectangle2D.Float firstHitbox, Rectangle2D.Float secondHitbox, int yTile) {
 		int firstXTile = (int) (firstHitbox.x / Game.TILES_SIZE);
 		int secondXTile = (int) (secondHitbox.x / Game.TILES_SIZE);
