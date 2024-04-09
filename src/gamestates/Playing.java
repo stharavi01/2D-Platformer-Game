@@ -1,6 +1,5 @@
 package gamestates;
 
-import java.awt.*;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -11,9 +10,6 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.Random;
 
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 import java.util.ArrayList;
 
