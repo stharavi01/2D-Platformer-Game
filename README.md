@@ -8,5 +8,7 @@ The project title of the game is “Platformer Gaming Application”. The genre 
 
 2. Open the project in Eclipse or any other IDE of your choice.
 
-3. Run the project from the IDE.
+3. Connect to the database using connector J.
+
+4. Run the project from the IDE.
 
