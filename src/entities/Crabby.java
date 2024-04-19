@@ -19,7 +19,7 @@ public class Crabby extends Enemy {
 		updateAnimationTick();
 		updateAttackBox();
 	}
-
+	//FSM to change State
 	private void updateBehavior(int[][] lvlData, Playing playing) {
 		if (firstUpdate)
 			firstUpdateCheck(lvlData);
